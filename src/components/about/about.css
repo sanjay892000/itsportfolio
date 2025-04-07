@@ -1,0 +1,320 @@
+#about-section {
+    width: 100vw;
+    padding: 30px 100px;
+    background-color: var(--bgblack);
+    max-width: 1500px;
+    margin: 0px auto;
+    margin-bottom: 50px;
+}
+
+.about-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.about-title>h1 {
+    font-size: 40px;
+    color: var(--textcolor);
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 2;
+    font-weight: 900;
+    width: 100%;
+    text-align: center;
+}
+
+.about-title>h1>span {
+    color: var(--bgorange);
+}
+
+.resume {
+    color: var(--bggray);
+    font-size: 100px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.personal-info {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    padding-top: 40px;
+}
+
+.left-info>h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: var(--textcolor);
+
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    width: 100%;
+}
+
+.info-col {
+    padding: 15px 0px;
+}
+
+.info-col>p {
+    font-size: 16px;
+    line-height: 2;
+    text-transform: capitalize;
+    color: var(--lightgray);
+}
+
+.info-col>P>span {
+    color: var(--textcolor);
+    padding-left: 5px;
+}
+
+.details-card {
+    width: 250px;
+    height: 150px;
+    margin: 0px auto;
+    background-color: var(--bggraytransparent);
+    border: 1px solid var(--bggray);
+    padding: 20px 70px 20px 30px;
+    margin-bottom: 20px;
+    color: var(--textcolor);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.details-card>p {
+    font-size: 35px;
+    color: var(--bgorange);
+    font-weight: bolder;
+    position: relative;
+
+    &::after {
+        content: '+';
+        position: absolute;
+        color: var(--bgorange);
+        bottom: 10px;
+        padding-left: 5px;
+        font-size: 30px;
+        font-weight: 400;
+
+    }
+}
+
+.details-card>h1 {
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    padding-left: 40px;
+    text-transform: uppercase;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        background-color: var(--lightgray);
+        top: 15px;
+        left: 0px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    #about-section {
+        padding: 20px 70px;
+    }
+    .right-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        padding-top: 0px;
+    }
+    
+    .about-title {
+        height: 150px;
+    }
+    
+    .about-title>h1 {
+        font-size: 35px;
+    }
+    .resume {
+        font-size: 80px;
+    }
+    
+    .personal-info {
+        grid-template-columns:1fr;
+        padding-top: 40px;
+    }
+    
+    .left-info>h1 {
+        font-size: 30px;
+    
+    }
+    
+    .info-container {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        width: 100%;
+    }
+    
+    .info-col {
+        padding: 15px 0px;
+    }
+    
+    .details-card {
+        width: 250px;
+        height: 150px;
+        padding: 20px 70px 20px 30px;
+        margin-bottom: 20px;
+        color: var(--textcolor);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .details-card>p {
+        font-size: 35px;
+    
+        &::after {
+            content: '+';
+            position: absolute;
+            color: var(--bgorange);
+            bottom: 10px;
+            padding-left: 5px;
+            font-size: 30px;
+            font-weight: 400;
+    
+        }
+    }
+    
+    .details-card>h1 {
+        font-weight: 500;
+        font-size: 16px;
+        position: relative;
+        padding-left: 40px;
+        text-transform: uppercase;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: var(--lightgray);
+            top: 15px;
+            left: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #about-section {
+        padding:25px;
+        height: auto;
+    }
+    
+    .about-title {
+        height: 70px;
+    }
+    
+    .about-title>h1 {
+        font-size: 20px;
+    }
+    .resume {
+        font-size: 50px;
+    }
+    
+    .personal-info {
+        grid-template-columns:1fr;
+        padding-top: 40px;
+    }
+    
+    .left-info>h1 {
+        font-size: 20px;
+    
+    }
+    
+    .info-container {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        width: 100%;
+    }
+    
+    .info-col {
+        padding: 15px 0px;
+    }
+    .info-col>p{
+        font-size: 14px;
+    }
+    
+    .right-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 25px;
+    }
+    .details-card {
+        width:200px;
+        height: auto;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .details-card>p {
+        font-size: 25px;
+    
+        &::after {
+            content: '+';
+            bottom: 10px;
+            font-size: 20px;
+    
+        }
+    }
+    
+    .details-card>h1 {
+        font-size: 14px;
+        padding-left: 40px;
+    }
+}
+@media screen and (max-width: 500px) {
+
+    .info-col>P{
+        display: flex;
+        flex-direction: column;
+    }
+    .info-col > .stylish-button{
+        margin-top: 50px;
+    }
+
+    .details-card {
+        width:auto;
+        height: auto;
+        padding: 20px 10px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .details-card>p {
+        font-size: 25px;
+    
+        &::after {
+            content: '+';
+            bottom: 10px;
+            font-size: 20px;
+    
+        }
+    }
+    
+    .details-card>h1 {
+        font-size: 14px;
+        padding-left: 40px;
+    }
+}

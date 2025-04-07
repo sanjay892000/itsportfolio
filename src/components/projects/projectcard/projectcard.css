@@ -1,0 +1,70 @@
+.project-card{
+    width: 40%;
+    padding: 30px 40px;
+    color: var(--textcolor);
+    background-color: var(--bggraytransparent);
+    border: 1px solid var(--bggray);
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.project-image>img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+.project-info>h1{
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.project-info>p{
+    font-size: 16px;
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .project-card{
+        padding: 30px;
+    }
+    
+    .project-image>img{
+        height: 100px;
+        width: 100px;
+    }
+    .project-info>h1{
+        font-size: 18px;
+    }
+    .project-info>p{
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .project-card{
+        width: 100%;
+        padding: 30px 80px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .project-card{
+        padding: 30px;
+    }
+    .project-image>img{
+        height: 80px;
+        width: 80px;
+    }
+    .project-info>h1{
+        font-size: 16px;
+    }
+    .project-info>p{
+        font-size: 12px;
+    }
+}

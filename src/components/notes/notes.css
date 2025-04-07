@@ -1,0 +1,67 @@
+#notes-section {
+    width: 100vw;
+    padding: 0px 110px 30px 90px;
+    background-color: var(--bgblack);
+    max-width: 1500px;
+    margin: 0px auto;
+}
+
+.notes-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.notes-card {
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+    background-color: var(--bggray);
+    position: relative;
+    padding: 30px;
+    box-shadow: 0px 0px 10px var(--lightblack);
+}
+.notes-card > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.child-notes-card{
+    position: absolute;
+    inset: 15px;
+    background-color: rgba(255, 166, 0, 0.727);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transform: translateX(-50px) rotateY(90deg);
+    transition:all 0.3s ease-out;
+
+
+    h3{
+        padding: 5px 0px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        color: var(--textcolor);
+        text-shadow: 1px 1px 2px var(--bgblack);
+    }
+    button{
+        background-color: rgba(255, 200, 0, 0.767);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        box-shadow: 1px 1px 2px var(--bgblack);
+        text-transform: capitalize;
+        &:hover{
+            background-color: rgb(255, 200, 0);
+            cursor: pointer;
+        }
+    }
+}
+
+.notes-card:hover > .child-notes-card{
+    transform: translateX(0px) rotateY(0deg);
+}

@@ -1,0 +1,81 @@
+#mymodal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bggraytransparent);
+}
+
+.modal-container{
+    outline: none;
+    background-color:transparent;
+     margin: auto;
+     border-radius: 8px;
+     position:absolute;
+     background-color: var(--bgmodal);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     color: var(--textcolor);
+     padding: 40px 55px;
+     outline: 1px solid var(--lightgray);
+     
+}
+.modal-container>h1{
+    font-size: 25px;
+    font-weight: 700;
+}
+.modal-container>p{
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 10px;
+    text-align: center;
+}
+.close-modal{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+.close-modal>svg{
+    fill: var(--textcolor);
+    height: 25px;
+    width: 25px;
+}
+
+.social-login-btn{
+    margin-top: 20px;
+    width: 100%;
+}
+.social-login-btn>form{
+    margin: 15px 0px;
+}
+.login-button{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--lightblack);
+    color: var(--textcolor);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s linear;
+    &:hover{
+        background-color: var(--bgorange);
+        color: black;
+    }
+}
+.social-logo-modal{
+    position: relative;
+    top: 3px;
+    padding-right: 10px;
+}
+
+@media screen and (max-width:640px) {
+    .modal-container{
+        width: 90%;
+        padding:40px 20px;
+    }
+}

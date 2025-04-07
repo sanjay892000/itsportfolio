@@ -1,0 +1,133 @@
+#skills-section {
+    width: 100vw;
+    max-width: 1500px;
+    margin: auto;
+    padding: 30px 100px 30px 50px;
+}
+
+#skills-section>h1 {
+    text-align: center;
+    color: var(--textcolor);
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.skills-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 30px 15px;
+    padding: 120px 0px 30px 0px;
+}
+.skill-box{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.skills{
+    padding: 10px;
+    border-radius: 50%;
+}
+#html-skills{
+    background-image: conic-gradient(var(--bgorange) 0% 95%, var(--bgblack) 5% 100%);
+}
+#css-skills{
+    background-image: conic-gradient(var(--bgorange) 0% 90%, var(--bgblack) 10% 100%);
+}
+#js-skills{
+    background-image: conic-gradient(var(--bgorange) 0% 85%, var(--bgblack) 15% 100%);
+}
+#tcss-skills{
+    background-image: conic-gradient(var(--bgorange) 0% 80%, var(--bgblack) 20% 100%);
+}
+#react-skills{
+    background-image: conic-gradient(var(--bgorange) 0% 70%, var(--bgblack) 30% 100%);
+}
+#node-skills{
+    background-image: conic-gradient(var(--bgorange) 0% 65%, var(--bgblack) 35% 100%);
+}
+#mongo-skills{
+    background-image: conic-gradient(var(--bgorange) 0% 75%, var(--bgblack) 25% 100%);
+}
+#rest-skills{
+    background-image: conic-gradient(var(--bgorange) 0% 90%, var(--bgblack) 10% 100%);
+}
+.skills>span{
+    line-height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--textcolor);
+    background-color: var(--bgblack);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skill-box>p{
+    font-size: 16px;
+    line-height: 4;
+    color: var(--textcolor);
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1000px) {
+    #skills-section {
+        padding: 20px 70px;
+    }
+    
+    #skills-section>h1 {
+        font-size: 25px;
+    }
+    .skills-container{
+        gap: 30px 15px;
+        padding: 120px 0px 30px 0px;
+    }
+    .skill-box{
+        width: 20%;
+    }
+    .skills{
+        padding: 10px;
+        border-radius: 50%;
+    }
+    .skills>span{
+        line-height: 100px;
+        width: 100px;
+        font-size: 20px;
+    }
+    .skill-box>p{
+        font-size: 16px;
+        line-height: 4;
+        padding-bottom: 20px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .skills>span{
+        line-height: 130px;
+        width: 130px;
+        font-size: 20px;
+    }
+    .skill-box{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 570px) {
+    #skills-section {
+        padding: 20px 30px;
+    }
+    .skills>span{
+        line-height: 80px;
+        width: 80px;
+        font-size: 16px;
+    }
+    .skill-box>p{
+        font-size: 12px;
+        line-height: 4;
+        padding-bottom: 20px;
+    }
+
+}

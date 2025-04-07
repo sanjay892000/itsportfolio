@@ -1,0 +1,41 @@
+.dark {
+  --lightgray: rgb(167, 167, 167);
+  --borderInput: #6c757d;
+  --bgblack:rgb(17,17,17);
+  --bggray:rgb(38, 38, 38);
+  --bgorange:rgb(254,196,0);
+  --bggraytransparent:rgba(28, 28, 28, 0.523);
+  --textcolor:white;
+  --bgmodal:rgb(18, 18, 18);
+  --lightblack:rgb(36, 36, 36);
+}
+.light {
+  --lightgray: rgb(81, 81, 81);
+  --borderInput: #5e6265;
+  --bgblack:rgb(235, 235, 235);
+  --bggray:rgb(224, 224, 224);
+  --bgorange:rgb(254, 195, 0);
+  --bggraytransparent:rgba(201, 201, 201, 0.5);
+  --textcolor:rgb(0, 0, 0);
+  --bgmodal:rgb(224, 224, 224);
+  --lightblack:rgb(247, 247, 247);
+}
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  letter-spacing: 1;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+}
+
+html,
+body {
+  height: 100%;
+  max-width: 100%;
+  background-color: var(--bgblack);
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}

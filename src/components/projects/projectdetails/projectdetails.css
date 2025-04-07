@@ -1,0 +1,124 @@
+.subproject-box{
+    color: white;
+}
+
+.subproject-card{
+    width: 30%;
+    color: var(--textcolor);
+    background-color: var(--bggray);
+    border: 1px solid var(--bggray);
+    border-radius: 10px;
+    &:hover > .subproject-image> img{
+        transform: scale(1.05);
+    }
+    &:hover .subproject-info{
+        background-color: var(--bggraytransparent);
+    }
+    &:hover .subproject-info>h1{
+        color: var(--bgorange);
+    }
+}
+.subproject-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: radial-gradient(circle,transparent, rgb(50, 50, 50));
+        z-index: 5;
+    }
+
+    &:hover .previewbtn{
+        transform:scale(1) translateX(0px) rotateY(0deg);
+    }
+}
+.subproject-image>img{
+    height: 160px;
+    width:100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 10px 10px 0px 0px;
+    transition: all 0.2s linear;
+}
+.previewbtn{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--bggraytransparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:scale(0.8) translateX(-100px) rotateY(90deg);
+    transition: all 0.2s linear;
+}
+.previewbtn>a{
+    padding: 8px 15px;
+    background-color: var(--bgorange);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--textcolor);
+}
+
+.subproject-info{
+    padding: 10px 20px;
+    position: relative;
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5px;
+        width: 100%;
+        background-color: var(--bgorange);
+    }
+}
+.subproject-info>h1{
+    font-size: 20px;
+    margin: 15px 0px 5px 0px;
+    text-transform: capitalize;
+}
+.subproject-info>p{
+    font-size: 14px;
+    line-height: 1.4;
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .subproject-card{
+        width: 40%;
+    }
+    .subproject-info{
+        padding: 10px 20px;
+    }
+    .subproject-info>h1{
+        font-size: 16px;
+    }
+    .subproject-info>p{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 640px) {
+
+    .subproject-card{
+        width: 100%;
+    }
+    .subproject-info{
+        padding: 10px 20px;
+    }
+    .subproject-info>h1{
+        font-size: 14px;
+    }
+    .subproject-info>p{
+        font-size: 12px;
+    }
+}
