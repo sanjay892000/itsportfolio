@@ -65,3 +65,9 @@
 .notes-card:hover > .child-notes-card{
     transform: translateX(0px) rotateY(0deg);
 }
+
+#mongo{
+    height: 100%;
+    object-fit: contain;
+    filter: hue-rotate(290deg);
+}

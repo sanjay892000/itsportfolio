@@ -7,7 +7,7 @@ import { Link, useLocation, Outlet, useNavigate } from 'react-router-dom';
 import { useStateContext } from '../../contextapi/stateContext';
 import {jwtDecode} from "jwt-decode";
 import ReviewsModal from '../modal/ReviewsModal';
-
+import { localHostUrls } from '../../BaseURLS';
 const OPTIONS = { loop: true }
 const SLIDE_COUNT = 5
 /* const SLIDES = Array.from(Array(SLIDE_COUNT).keys()) */
@@ -38,6 +38,7 @@ function Reviews() {
 
     const location = useLocation();
   const navigate = useNavigate();
+
     useEffect(() => {
       const query = new URLSearchParams(location.search);
       const token = query.get("token");
@@ -49,10 +50,15 @@ function Reviews() {
       }
       if(!localStorage.getItem('user')){
         handleOpen()
-        navigate('/reviews/sociallogin')
+        navigate('sociallogin')
       }
       
     }, [location]);
+
+    const logoutFun = () => {
+        localStorage.removeItem('user')
+        handleOpen()
+    }
 
     return (
         <section id='reviews-section'>
@@ -71,6 +77,9 @@ function Reviews() {
                     <i className="fa-solid fa-plus"></i>
                 </Link>}
             </div>
+            <button onClick={logoutFun} className="add-reviews-mob">
+                logout
+            </button>
         </section>
     )
 }

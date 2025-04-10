@@ -21,8 +21,6 @@ router.get(
            user = await userModel.create({name,email,avatar});
         }
         console.log(user, "user created")
-        const token = jwt.sign({ name, email, avatar }, process.env.JWT_SECRET, { expiresIn: "1h" });
-        res.redirect(`http://localhost:5173/reviews?token=${token}`);
     }
 );
 /* 
