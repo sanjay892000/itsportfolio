@@ -15,7 +15,6 @@ import ErrorPage from './components/errorpage/ErrorPage.jsx';
 import SocialLogin from './components/modal/SocialLogin';
 import ReviewsModal from './components/modal/ReviewsModal';
 
-
 function App() {
 
   const { theme } = useStateContext()
@@ -24,6 +23,7 @@ function App() {
     htmlTag.classList.remove('light', 'dark');
     htmlTag.classList.add(theme);
   }, [theme])
+
 
   return (
     <main id='portfolio-page'>

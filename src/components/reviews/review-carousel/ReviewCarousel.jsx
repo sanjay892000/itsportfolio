@@ -84,7 +84,7 @@ function ReviewCarousel(props) {
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {slides.map((reviews, index) => (
-                        <ReviewCard key={index} name={reviews.name} reviews={reviews.feed} image={reviews.image}/>
+                        <ReviewCard key={index} name={reviews.name} reviews={reviews.feedback} image={reviews.givenBy.avatar} email={reviews.email} rating={reviews.rating} date={reviews.createdAt}/>
                     ))}
                 </div>
             </div>

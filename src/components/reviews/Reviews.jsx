@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import './reviews.css'
 import SocialLogin from '../modal/SocialLogin';
 import ReviewCard from './reviewcard/ReviewCard';
 import ReviewCarousel from './review-carousel/ReviewCarousel';
 import { Link, useLocation, Outlet, useNavigate } from 'react-router-dom';
 import { useStateContext } from '../../contextapi/stateContext';
-import {jwtDecode} from "jwt-decode";
 import ReviewsModal from '../modal/ReviewsModal';
 import { localHostUrls } from '../../BaseURLS';
 const OPTIONS = { loop: true }
@@ -34,28 +33,31 @@ const SLIDES = [{
 }]
 
 function Reviews() {
-    const { handleOpen, handleClose } = useStateContext()
-
+    const { handleOpen, fetchReviewsData, slides } = useStateContext()
     const location = useLocation();
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
-      const query = new URLSearchParams(location.search);
-      const token = query.get("token");
-      if (token) {
-        const user = jwtDecode(token); // get { name, email, avatar }
-        console.log(user);
-        localStorage.setItem("user", JSON.stringify(user)); // optional
-      }
-      if(!localStorage.getItem('user')){
-        handleOpen()
-        navigate('sociallogin')
-      }
-      
+        const query = new URLSearchParams(location.search);
+        const token = query.get("token");
+        if (token) {
+            localStorage.setItem("token", token); // optional
+        }
+        if (!localStorage.getItem('token')) {
+            handleOpen()
+            navigate('sociallogin')
+        }
+
     }, [location]);
 
+
+
+    useEffect(() => {
+        fetchReviewsData()
+    }, [])
+
     const logoutFun = () => {
-        localStorage.removeItem('user')
+        localStorage.removeItem('token')
         handleOpen()
     }
 
@@ -65,12 +67,12 @@ function Reviews() {
                 <h1>write <span>Reviews</span></h1>
                 <h2 className='resume'>Reviews</h2>
             </div>
-           <Outlet/>
+            <Outlet />
             <div className="reviews-container">
-                <ReviewCarousel slides={SLIDES} options={OPTIONS} />
+                <ReviewCarousel slides={slides} options={OPTIONS} />
             </div>
             <div className="reviews-card-container">
-                { localStorage.getItem('user') ? <Link to="feedback" onClick={handleOpen} className="add-reviews">
+                {localStorage.getItem('token') ? <Link to="feedback" onClick={handleOpen} className="add-reviews">
                     <i className="fa-solid fa-plus"></i>
                 </Link> : <Link to="sociallogin" onClick={handleOpen} className="add-reviews">
                     <i className="fa-solid fa-plus"></i>

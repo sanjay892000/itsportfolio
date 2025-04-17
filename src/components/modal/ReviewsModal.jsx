@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './reviewmodal.css';
 import Modal from '@mui/material/Modal';
 import { useStateContext } from '../../contextapi/stateContext';
+import { localHostUrls } from '../../BaseURLS.js';
 function ReviewsModal() {
 
     const { open, handleClose } = useStateContext();
@@ -27,10 +28,26 @@ function ReviewsModal() {
     const handleChange = (e) => {
         setReview({ ...review, [e.target.name]: e.target.value })
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(review, star)
-        
+        const response = await fetch(`${localHostUrls}/api/reviews/addreviews`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('token')
+            },
+            body: JSON.stringify({ ...review, rating: star })
+        })
+        const data = await response.json()
+        console.log(data)
+        if (data.success) {
+            console.log('Review added successfully')
+            handleClose()
+        }
+        else {
+            console.log('Error adding review')
+        }
+
     }
 
     return (

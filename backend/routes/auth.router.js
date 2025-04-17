@@ -25,13 +25,6 @@ router.get(
         res.redirect(`http://localhost:5173/reviews/?token=${token}`);
     }
 );
-router.get("/user", isVerifyUser, (req, res) => {
-    res.json({
-        success: true,
-        user: req.user,
-        message: "User is authenticated",
-    });
-});
 /* 
 // GitHub Login
 router.get(

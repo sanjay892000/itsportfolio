@@ -2,7 +2,7 @@ import React from 'react'
 import './reviewcard.css'
 function ReviewCard(props) {
 
-    const {name, reviews, image} = props
+    const {name, reviews, image, rating, date, email} = props
     return (
         <div className="testimonial">
             <span className="open quote">“</span>
@@ -14,7 +14,7 @@ function ReviewCard(props) {
                         </div>
                         <div className="name-user">
                             <strong>{name}</strong>
-                            <span>@touseeqijazweb</span>
+                            <span>{email}</span>
                             <span id='reviews-date'>02/03/2025 12:25</span>
                         </div>
                     </div>
