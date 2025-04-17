@@ -3,9 +3,15 @@ const express = require("express");
 require('dotenv').config();
 const passport = require('./passport')
 const app = express();
+const cors = require('cors')
 const PORT = process.env.PORT;
 
 connectToDB();
+app.use(cors({
+    origin: ["http://localhost:5173"],
+    credentials: true, // This is important to allow cookies to be sent
+    methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 app.use(express.json());
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());

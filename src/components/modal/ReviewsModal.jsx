@@ -5,9 +5,9 @@ import { useStateContext } from '../../contextapi/stateContext';
 function ReviewsModal() {
 
     const { open, handleClose } = useStateContext();
+    const [review, setReview] = useState({ name: "", email: "", feedback: "" })
     const [star, setStar] = useState(0)
     const [starClass, setStarClass] = useState(['far', 'far', 'far', 'far', 'far'])
-    const [review, setReview] = useState({ name: "", email: "", feedback: "" })
     const addRatingFun = (e) => {
         let ratingNum = Number(e.target.id)
         let newRating = [...starClass]
@@ -22,6 +22,15 @@ function ReviewsModal() {
         }
         setStarClass(newRating)
         setStar(ratingNum + 1)
+    }
+
+    const handleChange = (e) => {
+        setReview({ ...review, [e.target.name]: e.target.value })
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(review, star)
+        
     }
 
     return (
@@ -40,10 +49,10 @@ function ReviewsModal() {
                 <p className="">Hey! Students Please share your thoughts & experiences.</p>
 
                 <div className="add-reviews-container">
-                    <form action="#" className="form-group">
-                        <input className="form-control" type="text" placeholder="Name" required />
-                        <input className="form-control" type="text" placeholder="Email" required />
-                        <textarea id="fb-comment" rows={3} className="form-control" placeholder="Tell us what you think" required></textarea>
+                    <form className="form-group" onSubmit={handleSubmit}>
+                        <input className="form-control" type="text" placeholder="Name" name="name" onChange={handleChange} required />
+                        <input className="form-control" type="text" name='email' placeholder="Email" onChange={handleChange} required />
+                        <textarea id="fb-comment" rows={3} name='feedback' className="form-control" placeholder="Tell us what you think" onChange={handleChange} required></textarea>
                         <div className="add-rating">
                             {starClass.map((rating, i) => <i key={i} id={i} className={`${rating} fa-star`} onClick={addRatingFun} ></i>)}
                         </div>

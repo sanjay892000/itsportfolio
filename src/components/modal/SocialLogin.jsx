@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './sociallogin.css'
 import Modal from '@mui/material/Modal';
 import { useStateContext } from '../../contextapi/stateContext';
-import {renderUrls, localHostUrls} from '../../BaseURLS.js'
+import { renderUrls, localHostUrls } from '../../BaseURLS.js'
 function SocialLogin() {
-
     const { open, handleClose } = useStateContext()
 
-     const loginWithGoogle = (e) => {
+    const loginWithGoogle = (e) => {
         e.preventDefault()
-        window.location.href =`${renderUrls}/auth/google`, "_self";        
+        window.location.href = `${localHostUrls}/auth/google`, "_self";
     }
 
     return (

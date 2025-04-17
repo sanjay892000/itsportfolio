@@ -34,7 +34,7 @@ const SLIDES = [{
 }]
 
 function Reviews() {
-    const { handleOpen } = useStateContext()
+    const { handleOpen, handleClose } = useStateContext()
 
     const location = useLocation();
   const navigate = useNavigate();
@@ -42,7 +42,6 @@ function Reviews() {
     useEffect(() => {
       const query = new URLSearchParams(location.search);
       const token = query.get("token");
-  
       if (token) {
         const user = jwtDecode(token); // get { name, email, avatar }
         console.log(user);
@@ -77,9 +76,6 @@ function Reviews() {
                     <i className="fa-solid fa-plus"></i>
                 </Link>}
             </div>
-            <button onClick={logoutFun} className="add-reviews-mob">
-                logout
-            </button>
         </section>
     )
 }
