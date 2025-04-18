@@ -1,12 +1,8 @@
 import React, { useEffect} from 'react'
 import './reviews.css'
-import SocialLogin from '../modal/SocialLogin';
-import ReviewCard from './reviewcard/ReviewCard';
 import ReviewCarousel from './review-carousel/ReviewCarousel';
 import { Link, useLocation, Outlet, useNavigate } from 'react-router-dom';
 import { useStateContext } from '../../contextapi/stateContext';
-import ReviewsModal from '../modal/ReviewsModal';
-import { localHostUrls } from '../../BaseURLS';
 const OPTIONS = { loop: true }
 
 function Reviews() {

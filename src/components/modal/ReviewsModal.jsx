@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './reviewmodal.css';
 import Modal from '@mui/material/Modal';
 import { useStateContext } from '../../contextapi/stateContext';
-import { localHostUrls } from '../../BaseURLS.js';
 function ReviewsModal() {
 
     const { open, handleClose, addReviewsData } = useStateContext();

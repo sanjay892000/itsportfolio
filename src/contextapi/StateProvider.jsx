@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { stateContext } from './stateContext';
-import { localHostUrls } from '../BaseURLS.js';
+import { baseUrls } from '../BaseURLS.js';
 
 const StateProvider = ({ children }) => {
 
@@ -17,7 +17,7 @@ const StateProvider = ({ children }) => {
     const [slides, setSlides] = useState(slide);
     
     const fetchReviewsData = async () => {
-        const response = await fetch(`${localHostUrls}/api/reviews/getreviews`)
+        const response = await fetch(`${baseUrls}/api/reviews/getreviews`)
         const data = await response.json()
         console.log(data)
         if (data.success) {
@@ -30,7 +30,7 @@ const StateProvider = ({ children }) => {
     }
 
     const addReviewsData = async(review, star)=>{
-        const response = await fetch(`${localHostUrls}/api/reviews/addreviews`, {
+        const response = await fetch(`${baseUrls}/api/reviews/addreviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

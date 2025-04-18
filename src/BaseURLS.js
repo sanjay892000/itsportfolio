@@ -1,2 +1,2 @@
-export const localHostUrls = 'http://localhost:5000';
-export const renderUrls = 'https://itsportfolio.onrender.com';
+/* export const baseUrls = 'http://localhost:5000'; */
+export const baseUrls = 'https://itsportfolio.onrender.com';
