@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true,
         lowercase: true,
-        match: '/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/',
+        match: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
     },
     avatar: {
         type: String,
