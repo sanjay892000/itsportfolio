@@ -8,7 +8,7 @@ const PORT = process.env.PORT;
 
 connectToDB();
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173", "https://sanjay892000.netlify.app"],
     credentials: true, // This is important to allow cookies to be sent
     methods: ["GET", "POST", "PUT", "DELETE"],
 }));
