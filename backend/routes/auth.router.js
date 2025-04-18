@@ -22,7 +22,7 @@ router.get(
             user = await userModel.create({ name, email, avatar });
         }
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
-        res.redirect(`http://localhost:5173/reviews/?token=${token}`);
+        res.redirect(`https://sanjay892000.netlify.app/reviews/?token=${token}`);
     }
 );
 /* 
