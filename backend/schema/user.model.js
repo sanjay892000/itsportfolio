@@ -14,8 +14,8 @@ const userSchema = new mongoose.Schema({
     },
     avatar: {
         type: String,
-        required: true,
         trim: true,
+        default: 'http://pluspng.com/img-png/png-user-icon-circled-user-icon-2240.png'
     }
 }, {
     timestamps: true,
