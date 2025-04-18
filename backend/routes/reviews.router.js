@@ -10,7 +10,7 @@ router.post('/addreviews', isToken, async (req, res) => {
         res.send({
             success: true,
             message: 'Review Added Successfully',
-            data: reviews
+            reviews: reviews
         })
     } catch (error) {
         res.send({

@@ -29,8 +29,29 @@ const StateProvider = ({ children }) => {
         }
     }
 
+    const addReviewsData = async(review, star)=>{
+        const response = await fetch(`${localHostUrls}/api/reviews/addreviews`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('token')
+            },
+            body: JSON.stringify({ ...review, rating: star })
+        })
+        const data = await response.json()
+        console.log(data)
+        if (data.success) {
+            setSlides([...slides, data.reviews])
+            console.log('Review added successfully')
+            handleClose()
+        }
+        else {
+            console.log('Error adding review')
+        }
+    }
+
     return (
-        <stateContext.Provider value={{ theme, lightMode, darkMode, open, handleOpen, handleClose, fetchReviewsData, slides }}>
+        <stateContext.Provider value={{ theme, lightMode, darkMode, open, handleOpen, handleClose, addReviewsData, fetchReviewsData, slides }}>
             {children}
         </stateContext.Provider>
     )

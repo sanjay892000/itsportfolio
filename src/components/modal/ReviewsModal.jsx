@@ -5,14 +5,13 @@ import { useStateContext } from '../../contextapi/stateContext';
 import { localHostUrls } from '../../BaseURLS.js';
 function ReviewsModal() {
 
-    const { open, handleClose } = useStateContext();
+    const { open, handleClose, addReviewsData } = useStateContext();
     const [review, setReview] = useState({ name: "", email: "", feedback: "" })
     const [star, setStar] = useState(0)
     const [starClass, setStarClass] = useState(['far', 'far', 'far', 'far', 'far'])
     const addRatingFun = (e) => {
         let ratingNum = Number(e.target.id)
         let newRating = [...starClass]
-        console.log(newRating)
         for (let i = 0; i < 5; i++) {
             if (ratingNum >= i) {
                 newRating[i] = 'fas'
@@ -30,23 +29,7 @@ function ReviewsModal() {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const response = await fetch(`${localHostUrls}/api/reviews/addreviews`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
-            },
-            body: JSON.stringify({ ...review, rating: star })
-        })
-        const data = await response.json()
-        console.log(data)
-        if (data.success) {
-            console.log('Review added successfully')
-            handleClose()
-        }
-        else {
-            console.log('Error adding review')
-        }
+        addReviewsData(review, star)
 
     }
 
