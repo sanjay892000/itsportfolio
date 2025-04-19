@@ -8,7 +8,6 @@ const contactSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true,
         lowercase: true,
         match: [/\S+@\S+\.\S+/, 'is invalid']
     },
@@ -17,10 +16,9 @@ const contactSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-    massage: {
+    message: {
         type: String,
         required: true,
-        maxlength: 1000,
         trim: true,
     }
 })

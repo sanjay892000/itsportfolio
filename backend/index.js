@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     res.send('Hello World! \n Welcome to the Home Page')
 })
 
-app.use('/api/user', require("./routes/contact.routes"))
+app.use('/api/contact', require("./routes/contact.routes"))
 app.use('/auth', require("./routes/auth.router"))
 app.use('/api/reviews', require("./routes/reviews.router"))
 

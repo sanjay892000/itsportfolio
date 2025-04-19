@@ -50,8 +50,27 @@ const StateProvider = ({ children }) => {
         }
     }
 
+    const contactFun = async(contact)=>{
+        console.log(contact)
+        const response = await fetch(`${baseUrls}/api/contact/sendmessage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(contact)
+        })
+        const data = await response.json()
+        console.log(data)
+        if (data.success) {
+            console.log('Contact message sent successfully')
+        }
+        else {
+            console.log('Error sending contact message')
+        }
+    }
+
     return (
-        <stateContext.Provider value={{ theme, lightMode, darkMode, open, handleOpen, handleClose, addReviewsData, fetchReviewsData, slides }}>
+        <stateContext.Provider value={{ theme, lightMode, darkMode, open, handleOpen, handleClose, addReviewsData, contactFun, fetchReviewsData, slides }}>
             {children}
         </stateContext.Provider>
     )
