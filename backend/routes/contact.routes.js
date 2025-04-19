@@ -306,8 +306,8 @@ router.post("/sendmessage", (req, res) => {
             a.es-button,
             button.es-button {
                 font-size: 18px !important;
-                padding: 10px 20px 10px 20px !important;
-                line-height: 120% !important
+                padding: 10px 10px 10px 10px !important;
+                line-height: 100% !important
             }
 
             a.es-button,
@@ -347,8 +347,12 @@ router.post("/sendmessage", (req, res) => {
             }
 
             .adapt-img {
-                width: 100% !important;
-                height: auto !important
+                width: 120px !important;
+                height: auto !important;
+                object-fit: cover !important;
+                border-radius: 50% !important;
+                margin-bottom: 20px !important;
+                
             }
 
             .es-mobile-hidden,
@@ -429,10 +433,11 @@ router.post("/sendmessage", (req, res) => {
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr>
                                                                 <td align="center"
-                                                                    style="padding:0;Margin:0;font-size:0"><img
+                                                                    style="padding:0;Margin:0;font-size:0">
+                                                                    <img
                                                                         src="https://fkzbyuq.stripocdn.email/content/guids/CABINET_c74740326627f415e8275e13895c1b042fe51c4adc86f8c5fe68736d1f57164e/images/logo.png"
-                                                                        alt="" width="111" class="adapt-img"
-                                                                        height="111"
+                                                                        alt="" width="80" class="adapt-img"
+                                                                        height="80"
                                                                         style="display:block;font-size:16px;border:0;outline:none;text-decoration:none">
                                                                 </td>
                                                             </tr>
@@ -512,7 +517,7 @@ router.post("/sendmessage", (req, res) => {
                                     </tr>
                                     <tr>
                                         <td align="left"
-                                            style="padding:0;Margin:0;padding-right:40px;padding-bottom:30px;padding-left:40px">
+                                            style="padding:0;Margin:0;padding-right:20px;padding-bottom:10px;padding-left:20px">
                                             <table cellpadding="0" cellspacing="0" width="100%" role="none"
                                                 style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr>
@@ -526,7 +531,7 @@ router.post("/sendmessage", (req, res) => {
                                                                     style="Margin:0;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:15px">
                                                                     <p
                                                                         style="Margin:0;mso-line-height-rule:exactly;font-family:'Josefin Sans', helvetica, arial, sans-serif;line-height:24px;letter-spacing:0;color:#001523;font-size:16px">
-                                                                        Dear Student,</p>
+                                                                        Dear ${name},</p>
                                                                     <p
                                                                         style="Margin:0;mso-line-height-rule:exactly;font-family:'Josefin Sans', helvetica, arial, sans-serif;line-height:24px;letter-spacing:0;color:#001523;font-size:16px">
                                                                         Thank you for taking the time to provide us with
@@ -575,7 +580,6 @@ router.post("/sendmessage", (req, res) => {
                                     <tr>
                                         <td align="left"
                                             style="Margin:0;padding-right:40px;padding-left:40px;padding-top:20px;padding-bottom:40px">
-                                            <!--[if mso]><table style="width:520px" cellpadding="0" cellspacing="0"><tr><td style="width:95px" valign="top"><![endif]-->
                                             <table cellpadding="0" cellspacing="0" align="left" class="es-left"
                                                 role="none"
                                                 style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
@@ -586,11 +590,12 @@ router.post("/sendmessage", (req, res) => {
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr>
                                                                 <td align="center"
-                                                                    style="padding:0;Margin:0;font-size:0"><img alt=""
+                                                                    style="padding:0;Margin:0;font-size:0;">
+                                                                    <img alt=""
                                                                         width="95"
                                                                         src="https://fkzbyuq.stripocdn.email/content/guids/CABINET_c74740326627f415e8275e13895c1b042fe51c4adc86f8c5fe68736d1f57164e/images/image.jpeg"
                                                                         class="adapt-img" height="95"
-                                                                        style="display:block;font-size:16px;border:0;outline:none;text-decoration:none">
+                                                                        style="display:block;font-size:16px;border:0;outline:none;text-decoration:none;">
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -669,7 +674,8 @@ router.post("/sendmessage", (req, res) => {
                                                                 <td align="center" class="es-m-txt-c"
                                                                     style="padding:0;Margin:0;padding-bottom:15px;font-size:0px">
                                                                     <a target="_blank" href="https://viewstripo.email"
-                                                                        style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px"><img
+                                                                        style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px">
+                                                                        <img
                                                                             src="https://fkzbyuq.stripocdn.email/content/guids/CABINET_c74740326627f415e8275e13895c1b042fe51c4adc86f8c5fe68736d1f57164e/images/image.png"
                                                                             alt="" height="80" class="adapt-img"
                                                                             style="display:block;font-size:16px;border:0;outline:none;text-decoration:none"
@@ -687,7 +693,8 @@ router.post("/sendmessage", (req, res) => {
                                                                                 style="padding:0;Margin:0;padding-right:10px">
                                                                                 <a target="_blank"
                                                                                     href="https://www.facebook.com/sanjay.singh.423911/"
-                                                                                    style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px"><img
+                                                                                    style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px">
+                                                                                    <img
                                                                                         src="https://fkzbyuq.stripocdn.email/content/assets/img/social-icons/square-white/facebook-square-white.png"
                                                                                         alt="Fb" title="Facebook"
                                                                                         height="24" width="24"
@@ -697,7 +704,8 @@ router.post("/sendmessage", (req, res) => {
                                                                                 style="padding:0;Margin:0;padding-right:10px">
                                                                                 <a target="_blank"
                                                                                     href="https://x.com/sanjayk21415502"
-                                                                                    style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px"><img
+                                                                                    style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px">
+                                                                                    <img
                                                                                         src="https://fkzbyuq.stripocdn.email/content/assets/img/social-icons/square-white/x-square-white.png"
                                                                                         alt="X" title="X" height="24"
                                                                                         width="24"
@@ -707,7 +715,8 @@ router.post("/sendmessage", (req, res) => {
                                                                                 style="padding:0;Margin:0;padding-right:10px">
                                                                                 <a target="_blank"
                                                                                     href="https://www.instagram.com/sanjay_singh.15/"
-                                                                                    style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px"><img
+                                                                                    style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px">
+                                                                                    <img
                                                                                         src="https://fkzbyuq.stripocdn.email/content/assets/img/social-icons/square-white/instagram-square-white.png"
                                                                                         alt="Ig" title="Instagram"
                                                                                         height="24" width="24"
@@ -717,7 +726,8 @@ router.post("/sendmessage", (req, res) => {
                                                                                 style="padding:0;Margin:0"><a
                                                                                     target="_blank"
                                                                                     href="https://www.youtube.com/@incorporateknowledge"
-                                                                                    style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px"><img
+                                                                                    style="mso-line-height-rule:exactly;text-decoration:underline;color:#F8F9FB;font-size:12px">
+                                                                                    <img
                                                                                         src="https://fkzbyuq.stripocdn.email/content/assets/img/social-icons/square-white/youtube-square-white.png"
                                                                                         alt="Yt" title="Youtube"
                                                                                         height="24" width="24"
@@ -731,7 +741,7 @@ router.post("/sendmessage", (req, res) => {
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:306px" valign="top"><![endif]-->
+
                                             <table cellpadding="0" cellspacing="0" align="right" class="es-right"
                                                 role="none"
                                                 style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
